@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FoodieFanatix</title>
+
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/custom.css">
+<link rel="stylesheet" href="style.css">
+<style>
+body {
+  font-family: Arial;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  vertical-align: middle;
+}
+
+.container {
+  position: relative;
+}
+
+.mySlides {
+  display: none;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+.caption-container {
+  text-align: center;
+  background-color: #222;
+  padding: 2px 16px;
+  color: white;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.column {
+  float: left;
+  width: 14.66%;
+  position: relative;
+}
+
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+
+</style>
+
+      <div id="menu">
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+
+  <h2 style="font-style: oblique;">HERE ARE SOME OF THE CHEFS THAT MADE THESE APPETIZING AND DELICIOUS FOOD.</h2>
+  <div class="container team">
+      <img src="images/Belcanto chef.jpg" class="img-thumbnail square" width="100"/>
+      <img src="images/9th avenue chef.jpg" class="img-thumbnail square"  width="100"/>
+      <img src="images/twins garden chef.jpg" class="img-thumbnail square" width="100"/>
+      <img src="images/clove club chef.jpg" class="img-thumbnail square"  width="100"/>
+      <img src="images/strada cucina chef.jpg" class="img-thumbnail square" width="100"/>
+      <img src="images/The-Test-Kitchen-Head-Chef.jpg" class="img-thumbnail square" width="100"/>
+      <img src="images/le berna chef.jpg" class="img-thumbnail square" width="100"/>
+      <img src="images/butcher boys chef.jpg" class="img-thumbnail square" width="100"/>
+  </div>
+
+
+<h2 style="text-align:center"><b>Food!</b></h2>
+
+<h3><i>Different Dishes That I've Tried On The Cities Best Restuarants.</i></h3>
+
+<div class="container">
+  <div class="mySlides">
+    <a href="main.html"><img src="images/bbq-pork-ribs.jpg" style="width:100%; height: 400px;"></a> 
+  </div>
+
+  <div class="mySlides">
+    <a href="seafood.html"><img src="images/Sushi.jpg" style="width:100%; height: 400px;"></a>
+  </div>
+    
+  <div class="mySlides">
+    <a href="pasta.html"><img src="images/pastaDisplay.jpg" style="width:100%; height: 400px;"></a>
+  </div>
+
+  <div class="mySlides">
+    <a href="drinks.html"><img src="images/sex-on-the-beach cocktail.jpg" style="width:100%; height: 400px;"></a>
+  </div>
+    
+  <div class="mySlides">
+    <a href="dessert.html"><img src="images/black-forest-cake-thumb.jpg" style="width:100%; height: 400px;"></a>
+  </div>
+    
+  <a class="prev" onclick="plusSlides(-1)">❮</a>
+  <a class="next" onclick="plusSlides(1)">❯</a>
+
+  <div class="caption-container">
+    <p id="caption"></p>
+  </div>
+
+  <div class="row">
+    <div class="column">
+      <img class="demo cursor" src="images/bbq-pork-ribs.jpg" style="width:100%; height: 8pc;" onclick="currentSlide(1)" alt="Top Dishes">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="images/Sushi.jpg" style="width:100%" onclick="currentSlide(2)" alt="Sea Food">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="images/pastaDisplay.jpg" style="width:100%; height: 8pc;" onclick="currentSlide(3)" alt="Pasta">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="images/sex-on-the-beach cocktail.jpg" style="width:100%; height:8pc" onclick="currentSlide(4)" alt="Beverages">
+    </div>    
+    <div class="column">
+      <img class="demo cursor" src="images/black-forest-cake-thumb.jpg" style="width:100%; height: 8pc" onclick="currentSlide(5)" alt="Dessert">
+    </div>
+  </div>
+</div>
+
+<script>
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("demo");
+  let captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+</script>
+    
+</body>
+</html>
